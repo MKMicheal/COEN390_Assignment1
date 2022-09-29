@@ -16,4 +16,6 @@
     <string name="max_count_goes_here">Max count goes here</string>
     <string name="maximum_counts">Maximum Counts</string>
     <string name="done" />
+    <string name="edit_settings">Edit Settings</string>
+    <string name="todo">TODO</string>
 </resources>

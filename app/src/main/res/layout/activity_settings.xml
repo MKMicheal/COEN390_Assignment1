@@ -32,7 +32,8 @@
         app:layout_constraintBottom_toTopOf="@+id/Counter2Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:enabled="false"/>
 
     <TextView
         android:id="@+id/Counter2Name"
@@ -58,7 +59,9 @@
         app:layout_constraintBottom_toTopOf="@+id/Counter3Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:enabled="false"/>
+
 
     <TextView
         android:id="@+id/Counter3Name"
@@ -84,7 +87,8 @@
         app:layout_constraintBottom_toTopOf="@+id/MaxCountName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:enabled="false"/>
 
     <TextView
         android:id="@+id/MaxCountName"
@@ -98,6 +102,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/MaxCountInput"
         android:layout_width="400dp"
@@ -106,12 +111,12 @@
         android:hint="@string/max_count_goes_here"
         android:inputType="number"
         android:maxLength="3"
-        android:text="200"
         android:textColorHint="#757575"
         app:layout_constraintBottom_toTopOf="@+id/SaveButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:enabled="false"/>
 
     <Button
         android:id="@+id/SaveButton"
@@ -119,20 +124,70 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="@string/save"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"/>
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="409dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/Theme.Design.Light"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/SettingsToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:title="Settings" />
+
+            <ImageButton
+                android:id="@+id/Backbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/todo"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="@+id/SettingsToolbar"
+                app:layout_constraintHorizontal_bias="0.308"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_keyboard_return_24"
+                tools:ignore="DuplicateSpeakableTextCheck" />
+
+            <ImageButton
+                android:id="@+id/Morebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/todo"
+                android:minHeight="48dp"
+                android:title="@string/edit_settings"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/Backbutton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showAsAction="ifRoom"
+                app:srcCompat="@drawable/ic_baseline_more_horiz_24" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
